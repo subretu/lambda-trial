@@ -13,7 +13,7 @@ def next_seq(table, tablename):
         Key={"tablename": tablename},
         UpdateExpression="set seq = seq + :val",
         ExpressionAttributeValues={":val": 1},
-        ReturnValue="UPDATED_NEW",
+        ReturnValues="UPDATED_NEW",
     )
 
     return response["Attributes"]["seq"]
